@@ -1,26 +1,27 @@
-Buildroot is a simple, efficient and easy-to-use tool to generate embedded
+# Buildroot Quick-Pi
+
+A super stripped down Raspberry Pi Web Radio image
+
+## Introduction
+
+[Buildroot](buildroot.org) is a simple, efficient and easy-to-use tool to generate embedded
 Linux systems through cross-compilation.
 
-The documentation can be found in docs/manual. You can generate a text
-document with 'make manual-text' and read output/docs/manual/manual.text.
-Online documentation can be found at http://buildroot.org/docs.html
+## QuickPi config
 
-To build and use the buildroot stuff, do the following:
+This is a buildroot configuration optimized for Raspberry Pi 1. The kernel has been
+extremely stripped down to optimize boot times without having to go to a custom
+init system. Measured boot time with a 1GB Sandisk Extreme III SD Card from 
+plug in to login prompt is around 5.5 seconds
 
-1) run 'make menuconfig'
-2) select the target architecture and the packages you wish to compile
-3) run 'make'
-4) wait while it compiles
-5) find the kernel, bootloader, root filesystem, etc. in output/images
+## How to build
 
-You do not need to be root to build or run buildroot.  Have fun!
+Run the following commands from the project root folder
 
-Buildroot comes with a basic configuration for a number of boards. Run
-'make list-defconfigs' to view the list of provided configurations.
+    make raspberrypi_minimal_mpd_defconfig
+    make
 
-Please feed suggestions, bug reports, insults, and bribes back to the
-buildroot mailing list: buildroot@buildroot.org
-You can also find us on #buildroot on Freenode IRC.
+## How to flash to SD card
 
-If you would like to contribute patches, please read
-https://buildroot.org/manual.html#submitting-patches
+    sudo dd if=output/images/sdcard.img of=/dev/sdX
+
