@@ -4,7 +4,7 @@ A super stripped down Raspberry Pi Web Radio image
 
 ## Introduction
 
-[Buildroot](buildroot.org) is a simple, efficient and easy-to-use tool to generate embedded
+[Buildroot](https://buildroot.org/) is a simple, efficient and easy-to-use tool to generate embedded
 Linux systems through cross-compilation.
 
 ## QuickPi config
