@@ -21,3 +21,7 @@ gpu_mem_1024=100
 
 # Activate onboard sound
 dtparam=audio=on
+
+# Activate i2c
+dtparam=i2c1=on
+dtparam=i2c_arm=on
