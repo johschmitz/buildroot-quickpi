@@ -1,0 +1,3 @@
+#!/bin/sh
+
+python /root/lcd_keypad/lcd_keypad.py &
