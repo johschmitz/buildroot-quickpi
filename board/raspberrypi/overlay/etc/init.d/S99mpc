@@ -1,0 +1,11 @@
+#!/bin/sh
+
+while [ ! "$(ps ax | grep -v grep | grep mpd)" ]
+do                     
+mpc status
+sleep 0.1
+done 
+
+mpc clear
+mpc load webradio
+mpc play 5

@@ -1,5 +1,0 @@
-#!/bin/sh
-
-mpc clear
-mpc load webradio
-mpc play 5

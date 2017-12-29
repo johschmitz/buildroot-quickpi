@@ -4,7 +4,8 @@ auto lo
 iface lo inet loopback
 
 auto eth0
-iface eth0 inet dhcp
+iface eth0 inet dhcp 
+  wait-delay 10
 
 #auto eth0
 #iface eth0 inet static
