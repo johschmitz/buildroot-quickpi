@@ -1,11 +1,25 @@
 #!/bin/sh
 
-while [ ! "$(ps ax | grep -v grep | grep mpd)" ]
-do                     
-mpc status
-sleep 0.1
-done 
+start() {
+    for i in `seq 50` ; do
+        if [ "$(mpc 2>&1 | grep refused)" ]; then
+            printf "Waiting for mpd\n"
+            sleep 0.1
+        else
+            printf "Load webradio channels and play\n"
+            mpc clear
+            mpc load webradio
+            mpc play 5
+            break
+        fi
+    done
+}
 
-mpc clear
-mpc load webradio
-mpc play 5
+case "$1" in
+    start)
+        start
+        ;;
+    *)
+        echo "Usage: $0 {start}"
+        exit 1
+esac
