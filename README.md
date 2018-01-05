@@ -57,3 +57,13 @@ is plugged in the reader and ready find out the correct device, e.g.,
     sync
 
 After flashing insert the SD card into you Raspberry and power it up.
+
+## Login and filesystem modification
+
+The username is "root" and the password is "rpi", ssh loggin is possible.
+To protect the file system it is mounted read-only at starup.
+Remount rw with
+
+    mount -o remount,rw /
+
+to modify.
