@@ -1,3 +1,14 @@
 #!/bin/sh
 
-python /root/lcd_keypad/lcd_keypad.py &
+start() {
+    python /root/lcd_keypad/lcd_keypad.py &
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    *)
+        echo "Usage: $0 {start}"
+        exit 1
+esac
