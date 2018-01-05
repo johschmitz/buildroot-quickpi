@@ -43,12 +43,15 @@ Now run
 
     make
 
-and you may get a cup of tea or coffee because this takes some time.
+and you may consider geting a cup of tea or coffee because this can take some
+time.
 
 ## How to flash to SD card
 
-Be careful with the dd command otherwise you might overwrite some important data!
-Plug the SD card into the card reader find out the correct device /dev/sdX and run
+Be careful with the dd command otherwise you might overwrite some important
+data! Also make sure the card is not mounted when you flash it. When the card
+is plugged in the reader and ready find out the correct device, e.g.,
+"/dev/sdX" and run
 
     sudo dd if=output/images/sdcard.img of=/dev/sdX
     sync
